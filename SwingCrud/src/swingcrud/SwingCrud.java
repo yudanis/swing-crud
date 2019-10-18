@@ -5,6 +5,10 @@
  */
 package swingcrud;
 
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import swingcrud.controler.MyCrudControler;
+
 /**
  *
  * @author ytr
@@ -16,6 +20,14 @@ public class SwingCrud {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        MyCrudControler controller = new MyCrudControler();
+        JFrame frame = new JFrame();
+        JPanel dlg = controller.GetCrudPanel();
+        frame.setContentPane(dlg);
+        frame.setSize(dlg.getPreferredSize());
+        frame.pack();
+        frame.setVisible(true);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
     
 }
